@@ -78,7 +78,7 @@ const Home = () => {
 
     const handleOnClickSQLButton = (e) => {
         if(palindromeSQL.length > 0){
-            let palindrome = fetch("http://localhost:5152/api/SQLPalindrome", {
+            let palindrome = fetch(process.env.REACT_APP_API_URL + "SQLPalindrome", {
                 method: "POST",
                 headers: {
                     'Accept': 'application/json',
@@ -106,7 +106,7 @@ const Home = () => {
 
     const handleOnClickCSharpGoButton = (e) => {
         if(palindromeCSharp.length > 0){
-            let palindrome = fetch("http://localhost:5152/api/Palindrome", {
+            let palindrome = fetch(process.env.REACT_APP_API_URL + "Palindrome", {
                 method: "POST",
                 headers: {
                     'Accept': 'application/json',
