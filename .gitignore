@@ -14,7 +14,7 @@ yarn-error.log*
 /out/
 
 # production
-/build
+client/build
 
 # dependencies
 /node_modules

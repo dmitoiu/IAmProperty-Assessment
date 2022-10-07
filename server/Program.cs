@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.EntityFrameworkCore;
 using server.Data;
 
@@ -24,11 +25,19 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseRouting();
+app.UseDefaultFiles();
+app.UseStaticFiles();
+
 app.UseCors(options =>
 {
     options.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:3000");
 });
 //app.UseHttpsRedirection();
 app.UseAuthorization();
-app.MapControllers();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+    endpoints.MapFallbackToController("Index", "Fallback");
+});
 app.Run();
