@@ -25,12 +25,12 @@ builder.Services.AddDbContext<StoreContext>(options =>
         connURL = connURL.Replace("postgres://", string.Empty);
         var pgUserPass = connURL.Split("@")[0];
         var pgHostPortDb = connURL.Split("@")[1];
-        var pgHostPort = connURL.Split("/")[1];
-        var pgDb = connURL.Split("/")[1];
-        var pgUser = connURL.Split(":")[0];
-        var pgPass = connURL.Split(":")[1];
-        var pgHost = connURL.Split(":")[0];
-        var pgPort = connURL.Split(":")[1];
+        var pgHostPort = pgHostPortDb.Split("/")[1];
+        var pgDb = pgHostPortDb.Split("/")[1];
+        var pgUser = pgUserPass.Split(":")[0];
+        var pgPass = pgUserPass.Split(":")[1];
+        var pgHost = pgHostPort.Split(":")[0];
+        var pgPort = pgHostPort.Split(":")[1];
         connStr = $"Server={pgHost};Port={pgPort};User Id={pgUser};Password={pgPass};Database={pgDb};SSL Mode=Require;Trust Server Certificate=true";
     }
     options.UseNpgsql(connStr);
