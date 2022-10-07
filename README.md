@@ -1,6 +1,6 @@
 ## Darie-Dragos Mitoiu - iamproperty Assessment
 
-### Assessment - React/Redux/TailwindCSS, C# ASP.NET Core, SQLite
+### Assessment - React/Redux/TailwindCSS, C# ASP.NET Core, PostgreSQL
 
 #### Installing Packages
 
