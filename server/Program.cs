@@ -13,7 +13,27 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<StoreContext>(options =>
 {
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
+    var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+    string connStr;
+    if (env == "Development")
+    {
+        connStr = builder.Configuration.GetConnectionString("DefaultConnection");
+    }
+    else
+    {
+        var connURL = Environment.GetEnvironmentVariable("DATABASE_URL");
+        connURL = connURL.Replace("postgres://", string.Empty);
+        var pgUserPass = connURL.Split("@")[0];
+        var pgHostPortDb = connURL.Split("@")[1];
+        var pgHostPort = connURL.Split("/")[1];
+        var pgDb = connURL.Split("/")[1];
+        var pgUser = connURL.Split(":")[0];
+        var pgPass = connURL.Split(":")[1];
+        var pgHost = connURL.Split(":")[0];
+        var pgPort = connURL.Split(":")[1];
+        connStr = $"Server={pgHost};Port={pgPort};User Id={pgUser};Password={pgPass};Database={pgDb};SSL Mode=Require;Trust Server Certificate=true";
+    }
+    options.UseNpgsql(connStr);
 });
 
 var app = builder.Build();
