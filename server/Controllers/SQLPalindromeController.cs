@@ -38,7 +38,7 @@ namespace server.Controllers
                 var pgPass = pgUserPass.Split(":")[1];
                 var pgHost = pgHostPort.Split(":")[0];
                 var pgPort = pgHostPort.Split(":")[1];
-                connStr = $"Server={pgHost};Port={pgPort};User Id={pgUser};Password={pgPass};Database={pgDb};SSL Mode=Require;Trust Server Certificate=true";
+                connStr = $"Server={pgHost};Port={pgPort};User Id={pgUser};Password={pgPass};Database={pgDb};";
             }
             NpgsqlConnection _connPg = new NpgsqlConnection(connStr);
             string sql = string.Format("SELECT  (reverse(REPLACE('{0}', ' ', '')) = REPLACE('{0}', ' ', ''))", palindrome);
