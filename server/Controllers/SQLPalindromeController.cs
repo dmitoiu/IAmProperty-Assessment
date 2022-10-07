@@ -32,7 +32,7 @@ namespace server.Controllers
                 connURL = connURL.Replace("postgres://", string.Empty);
                 var pgUserPass = connURL.Split("@")[0];
                 var pgHostPortDb = connURL.Split("@")[1];
-                var pgHostPort = pgHostPortDb.Split("/")[1];
+                var pgHostPort = pgHostPortDb.Split("/")[0];
                 var pgDb = pgHostPortDb.Split("/")[1];
                 var pgUser = pgUserPass.Split(":")[0];
                 var pgPass = pgUserPass.Split(":")[1];
