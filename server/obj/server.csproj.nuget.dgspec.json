@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\Dev\\Web Apps\\IAmProperty-Assessment\\server\\server.csproj": {}
+    "D:\\Dev\\Web Apps\\IAmProperty-Assessment\\server\\server.csproj": {}
   },
   "projects": {
-    "d:\\Dev\\Web Apps\\IAmProperty-Assessment\\server\\server.csproj": {
+    "D:\\Dev\\Web Apps\\IAmProperty-Assessment\\server\\server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\Dev\\Web Apps\\IAmProperty-Assessment\\server\\server.csproj",
+        "projectUniqueName": "D:\\Dev\\Web Apps\\IAmProperty-Assessment\\server\\server.csproj",
         "projectName": "server",
-        "projectPath": "d:\\Dev\\Web Apps\\IAmProperty-Assessment\\server\\server.csproj",
+        "projectPath": "D:\\Dev\\Web Apps\\IAmProperty-Assessment\\server\\server.csproj",
         "packagesPath": "C:\\Users\\Darie\\.nuget\\packages\\",
-        "outputPath": "d:\\Dev\\Web Apps\\IAmProperty-Assessment\\server\\obj\\",
+        "outputPath": "D:\\Dev\\Web Apps\\IAmProperty-Assessment\\server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Darie\\AppData\\Roaming\\NuGet\\NuGet.Config",

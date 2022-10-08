@@ -19,6 +19,22 @@ namespace server.Controllers
 
         public static bool isPalindrome(string palindrome)
         {
+            /**
+             * ---------------------------------------------------------------------------
+             * The SQL function presented below can be executed using NpgsqlCommand method 
+             * This can be done once the function has been created within the SQL Database
+             * ---------------------------------------------------------------------------
+             * Create or replace function isPalindrome(palindrome text) 
+             *  RETURNS BOOLEAN AS $$
+             *  DECLARE passed BOOLEAN;
+             *  BEGIN
+             *           SELECT  (reverse(REPLACE(palindrome, ' ', '')) = REPLACE(palindrome, ' ', '')) INTO passed;
+             *           RETURN passed;
+             *  END;
+             *  $$  LANGUAGE plpgsql
+             *
+             *  SELECT isPalindrome('too hot to hoot')
+             */
             var builder = WebApplication.CreateBuilder();
             var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
             string connStr;
