@@ -39,7 +39,7 @@ cd server
 dotnet run
 
 cd client
-npm run dev
+npm run start
 ```
 
 #### Build Instructions
